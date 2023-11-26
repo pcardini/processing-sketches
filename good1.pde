@@ -2,9 +2,9 @@ ArrayList<Line> lines; // List to store multiple lines
 Line currentLine;      // The line currently being drawn
 
 void setup() {
-  size(800, 600); // Set canvas size
+  size(300, 300); // Set canvas size
   lines = new ArrayList<Line>();
-  background(245, 159, 0); // Set background color
+  background(245, 159, 190); // Set background color
 }
 
 void draw() {
