@@ -56,7 +56,7 @@ class Line {
       let distance = p5.Vector.dist(lastPoint, point);
 
       // Ensure thicker stroke for slower movement
-      let weight = map(distance, 0, 15, 5, 0.2);
+      let weight = map(distance, 0, 15, 5, 0.3);
       this.strokeWeights.push(weight);
     }
   }
