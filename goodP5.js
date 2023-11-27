@@ -3,7 +3,7 @@ let currentLine; // The line currently being drawn
 
 function setup() {
     // Adjust the size to fit the window, considering potential scrollbar width/height
-    let canvas = createCanvas(windowWidth - 1, windowHeight - 1);
+    let canvas = createCanvas(windowWidth - 5, windowHeight - 5);
     canvas.style('display', 'block'); // This prevents any extra space around the canvas that might cause scrollbars
     background(245, 159, 190); // Set background color
 }
@@ -21,7 +21,7 @@ function draw() {
 
 function windowResized() {
     // Adjust the canvas size on window resize
-    resizeCanvas(windowWidth - 1, windowHeight - 1);
+    resizeCanvas(windowWidth - 5, windowHeight - 5);
     background(245, 159, 190); // Reset the background
 }
 
