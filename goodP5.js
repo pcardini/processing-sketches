@@ -2,7 +2,7 @@ let lines = []; // List to store multiple lines
 let currentLine; // The line currently being drawn
 
 function setup() {
-  createCanvas(800, 600); // Set canvas size
+  createCanvas(1000, 1000); // Set canvas size
   background(245, 159, 190); // Set background color
 }
 
