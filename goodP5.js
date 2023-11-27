@@ -2,31 +2,39 @@ let lines = []; // List to store multiple lines
 let currentLine; // The line currently being drawn
 
 function setup() {
-  createCanvas(800, 800); // Set canvas size
-  background(245, 159, 190); // Set background color
+    // Create a canvas that fills the browser window
+    createCanvas(windowWidth, windowHeight);
+    background(245, 159, 190); // Set background color
 }
 
 function draw() {
-  for (let line of lines) {
-    line.display(); // Display each line
-  }
+    for (let line of lines) {
+        line.display(); // Display each line
+    }
 
-  if (currentLine != null) {
-    currentLine.addPoint(createVector(mouseX, mouseY)); // Add points to current line
-    currentLine.displayTemporary(); // Display the current line being drawn
-  }
+    if (currentLine != null) {
+        currentLine.addPoint(createVector(mouseX, mouseY)); // Add points to current line
+        currentLine.displayTemporary(); // Display the current line being drawn
+    }
+}
+
+function windowResized() {
+    // Resize the canvas when the browser window is resized
+    resizeCanvas(windowWidth, windowHeight);
+    background(245, 159, 190); // Reset the background
 }
 
 function mousePressed() {
-  currentLine = new Line(); // Start a new line
+    currentLine = new Line(); // Start a new line
 }
 
 function mouseReleased() {
-  currentLine.calculateCentroid(); // Calculate centroid for the line
-  currentLine.startRotating(); // Start rotating the line
-  lines.push(currentLine); // Add the completed line to the list
-  currentLine = null; // Reset current line
+    currentLine.calculateCentroid(); // Calculate centroid for the line
+    currentLine.startRotating(); // Start rotating the line
+    lines.push(currentLine); // Add the completed line to the list
+    currentLine = null; // Reset current line
 }
+
 
 class Line {
   constructor() {
